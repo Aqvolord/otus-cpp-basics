@@ -1,3 +1,0 @@
-D:/Project/study/HomeWork/build/CMakeFiles/hello_world.dir
-D:/Project/study/HomeWork/build/CMakeFiles/ALL_BUILD.dir
-D:/Project/study/HomeWork/build/CMakeFiles/ZERO_CHECK.dir
