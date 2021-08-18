@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\out",
+    "\\src"
   ],
   "PreviewInSolutionExplorer": false
 }
