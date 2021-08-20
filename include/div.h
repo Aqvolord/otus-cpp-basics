@@ -6,7 +6,7 @@
 
 class Div : public ASTNode {
 public:
-    Div(int val)
+    Div(int val, )
         : ASTNode(std::to_string(val))
         , val_(val) {}
 

@@ -6,12 +6,12 @@
 
 class Variable : public ASTNode {
 public:
-    Variable(int val)
-        : ASTNode(std::to_string(val))
+    Variable(std::string val)
+        : ASTNode(std::string(val))
         , val_(val) {}
 
-    int value() const { return val_; }
+    std::string value() const { return val_; }
 
 private:
-    int val_;
+    std::string val_;
 };
