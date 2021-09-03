@@ -6,7 +6,7 @@
 
 class Mul : public ASTNode {
 public:
-    Mul(int val)
+    Mul(int val, )
         : ASTNode(std::to_string(val))
         , val_(val) {}
 

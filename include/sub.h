@@ -6,7 +6,7 @@
 
 class Sub : public ASTNode {
 public:
-    Sub(int val)
+    Sub(int val, )
         : ASTNode(std::to_string(val))
         , val_(val) {}
 

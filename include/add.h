@@ -6,7 +6,7 @@
 
 class Add : public ASTNode {
 public:
-    Add(int val)
+    Add(ASTNode* val, ASTNode* val1)
         : ASTNode(std::to_string(val))
         , val_(val) {}
 
