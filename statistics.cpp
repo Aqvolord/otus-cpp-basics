@@ -11,7 +11,6 @@ public:
 	virtual ~IStatistics() {}
 };
 
-
 class Min : public IStatistics
 {
 public:
@@ -55,15 +54,16 @@ public:
 		_ordinal++;
 		_mean = _sum / _ordinal;
 	}
-	
+
 	float getMeaning() const override { return _mean; }
 	int getOrdinal()const { return _ordinal; }
 	const char* getName() const override { return "mean"; }
-
+	
 private:
 	float _sum;
 	int _ordinal;
 	float _mean;
+	
 };
 
 class Std : public IStatistics
@@ -71,23 +71,19 @@ class Std : public IStatistics
 public:
 	void change(float num) override
 	{
-		//_num = num;
-		_sum += num;
-		_ordinal++;
-		_mean = _sum / _ordinal;
 
-		_sum += pow((num - _mean), 2);
-		_std = sqrt(_sum / _ordinal);
+		
+		//_sum2 += pow((num - _mean), 2);
+		//_std = sqrt(_sum2 / 10);
 	}
 
 	float getMeaning() const override { return _std; }
-	const char* getName() const override { return "std"; }
+ 	const char* getName() const override { return "std"; }
 
 private:
-	float _sum;
-	float _num;
-	float _mean;
-	int _ordinal;
+	//float _num;
+	//
+	//int _ordinal;
 	float _std;
 };
 //
@@ -134,10 +130,12 @@ int main() {
 	//statistics[5] = new Pct50{};
 
 	std::cout << "Enter a sequence of numbers: " << std::endl;
-	float value;
+	float value, j = 0;
 	while (std::cin >> value) {
+		std::cout << ++j << std::endl;
 		for (size_t i = 0; i < statistics_count; ++i) {
 			statistics[i]->change(value);
+			std::cout << j+10 << std::endl;
 		}
 	}
 
