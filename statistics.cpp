@@ -1,6 +1,6 @@
 #include <iostream>
 #include <limits>
-#include<cmath>
+#include <cmath>
 
 class IStatistics
 {
@@ -51,9 +51,9 @@ class Mean : public IStatistics
 public:
 	void change(float num) override
 	{
-	_sum += num;
-	_ordinal++;
-	_mean = _sum / _ordinal;
+		_sum += num;
+		_ordinal++;
+		_mean = _sum / _ordinal;
 	}
 	
 	float getMeaning() const override { return _mean; }
@@ -72,25 +72,25 @@ public:
 	void change(float num) override
 	{
 		//_num = num;
-		/*_sum += num;
+		_sum += num;
 		_ordinal++;
 		_mean = _sum / _ordinal;
 
 		_sum += pow((num - _mean), 2);
-		_std = sqrt(_sum / _ordinal);*/
+		_std = sqrt(_sum / _ordinal);
 	}
 
 	float getMeaning() const override { return _std; }
 	const char* getName() const override { return "std"; }
 
 private:
-	//float _sum;
-	//float _num;
-	//float _mean;
-	//int _ordinal;
+	float _sum;
+	float _num;
+	float _mean;
+	int _ordinal;
 	float _std;
 };
-
+//
 //class Pct90 : public IStatistics
 //{
 //public:
@@ -123,7 +123,7 @@ private:
 
 int main() {
 
-	const size_t statistics_count = 6;
+	const size_t statistics_count = 4;
 	IStatistics* statistics[statistics_count];
 
 	statistics[0] = new Min{};
