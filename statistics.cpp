@@ -56,14 +56,12 @@ public:
 	}
 
 	float getMeaning() const override { return _mean; }
-	int getOrdinal()const { return _ordinal; }
 	const char* getName() const override { return "mean"; }
-	
+
 private:
 	float _sum;
 	int _ordinal;
 	float _mean;
-	
 };
 
 class Std : public IStatistics
@@ -71,21 +69,25 @@ class Std : public IStatistics
 public:
 	void change(float num) override
 	{
-
+		_sum += num;
+		_ordinal++;
+		_mean = _sum / _ordinal;
 		
-		//_sum2 += pow((num - _mean), 2);
-		//_std = sqrt(_sum2 / 10);
+		_sum2 += pow((num - _mean), 2);
+		_std = sqrt(_sum2 / (_ordinal - 1));
 	}
 
 	float getMeaning() const override { return _std; }
  	const char* getName() const override { return "std"; }
 
 private:
-	//float _num;
-	//
-	//int _ordinal;
+	float _sum;
+	float _mean;
+	float _sum2;
+	int _ordinal;
 	float _std;
 };
+
 //
 //class Pct90 : public IStatistics
 //{
@@ -130,12 +132,10 @@ int main() {
 	//statistics[5] = new Pct50{};
 
 	std::cout << "Enter a sequence of numbers: " << std::endl;
-	float value, j = 0;
+	float value;
 	while (std::cin >> value) {
-		std::cout << ++j << std::endl;
 		for (size_t i = 0; i < statistics_count; ++i) {
 			statistics[i]->change(value);
-			std::cout << j+10 << std::endl;
 		}
 	}
 
