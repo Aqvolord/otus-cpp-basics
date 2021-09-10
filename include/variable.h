@@ -8,10 +8,10 @@ class Variable : public ASTNode {
 public:
     Variable(std::string val)
         : ASTNode(std::string(val))
-        , val_(val) {}
+        , _val(val) {}
 
-    std::string value() const { return val_; }
+    std::string value() const { return _val; }
 
 private:
-    std::string val_;
+    std::string _val;
 };

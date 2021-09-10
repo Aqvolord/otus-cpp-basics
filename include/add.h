@@ -6,12 +6,14 @@
 
 class Add : public ASTNode {
 public:
-    Add(ASTNode* val, ASTNode* val1)
-        : ASTNode(std::to_string(val))
-        , val_(val) {}
+    Add(ASTNode* num1, ASTNode* num2)
+        : ASTNode(std::string(), {num1}, {num2})
+        , _num1(num1), _num2(num2) {}
 
-    int value() const { return val_; }
+    ASTNode* number1() const { return _num1; }
+    ASTNode* number2() const { return _num2; }
 
 private:
-    int val_;
+    ASTNode* _num1;
+    ASTNode* _num2;
 };

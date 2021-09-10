@@ -8,10 +8,10 @@ class Number : public ASTNode {
   public:
     Number(int val)
         : ASTNode(std::to_string(val))
-        , val_(val) {}
+        , _val(val) {}
 
-    int value() const { return val_; }
+    int value() const { return _val; }
 
   private:
-    int val_;
+    int _val;
 };
