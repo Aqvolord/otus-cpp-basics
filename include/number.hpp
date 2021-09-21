@@ -5,13 +5,7 @@
 #include "astnode.hpp"
 
 class Number : public ASTNode {
-  public:
+public:
     Number(int val)
-        : ASTNode(std::to_string(val))
-        , _val(val) {}
-
-    int value() const { return _val; }
-
-  private:
-    int _val;
+        : ASTNode(std::to_string(val)) {}
 };
