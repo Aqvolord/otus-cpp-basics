@@ -13,9 +13,8 @@ int main() {
     Parser parser(lexer);
 
     ASTNode* ast = parser.parse();
-    if (ast) {
-         ast->print(std::cout);
-    }
+    ast->print(std::cout);
+
 
     return 0;
 }
