@@ -57,6 +57,7 @@ public:
 
 	float getMeaning() const override { return _mean; }
 	const char* getName() const override { return "mean"; }
+	int getOrdinal() const { return _ordinal; }
 
 private:
 	float _sum{};
@@ -69,22 +70,16 @@ class Std : public Mean
 public:
 	void change(float num) override
 	{
-		_sum += num;
-		_ordinal++;
-		_mean = _sum / _ordinal;
+		Mean::change(num);
 		
-		_sum2 += pow((num - _mean), 2);
-		_std = sqrt(_sum2 / (_ordinal - 1));
+		_sum2 += pow((num - Mean::getMeaning()), 2);
+		_std = sqrt(_sum2 / (Mean::getOrdinal() - 1));
 	}
 
 	float getMeaning() const override { return _std; }
  	const char* getName() const override { return "std"; }
 
 private:
-	float _sum{};
-	int _ordinal{};
-	float _mean{};
-
 	float _sum2{};
 	float _std{};
 };
