@@ -42,7 +42,7 @@ public:
 	const char* getName() const override { return "max"; }
 
 private:
-	float _max;
+	float _max{};
 };
 
 class Mean : public IStatistics
@@ -59,12 +59,12 @@ public:
 	const char* getName() const override { return "mean"; }
 
 private:
-	float _sum;
-	int _ordinal;
-	float _mean;
+	float _sum{};
+	int _ordinal{};
+	float _mean{};
 };
 
-class Std : public IStatistics
+class Std : public Mean
 {
 public:
 	void change(float num) override
@@ -81,11 +81,12 @@ public:
  	const char* getName() const override { return "std"; }
 
 private:
-	float _sum;
-	float _mean;
-	float _sum2;
-	int _ordinal;
-	float _std;
+	float _sum{};
+	int _ordinal{};
+	float _mean{};
+
+	float _sum2{};
+	float _std{};
 };
 
 //
