@@ -32,6 +32,8 @@ private:
 class Max : public IStatistics
 {
 public:
+	Max() : _max{ std::numeric_limits<float>::lowest() } {}
+
 	void change(float num) override
 	{
 		if (_max < num)
@@ -42,7 +44,7 @@ public:
 	const char* getName() const override { return "max"; }
 
 private:
-	float _max{};
+	float _max;
 };
 
 class Mean : public IStatistics
