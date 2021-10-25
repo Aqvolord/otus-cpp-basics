@@ -1,4 +1,4 @@
-#include "src/Include/max.h"
+#include "max.h"
 
 void Max::change(float num)
 {

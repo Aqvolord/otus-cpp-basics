@@ -1,4 +1,4 @@
-#include "src/Include/mean.h"
+#include "mean.h"
 
 void Mean::change(float num)
 {

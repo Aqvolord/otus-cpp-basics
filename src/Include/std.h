@@ -1,6 +1,6 @@
 #pragma once
 
-#include "src/Include/mean.h"
+#include "mean.h"
 
 #include <cmath>
 

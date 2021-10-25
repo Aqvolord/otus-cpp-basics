@@ -1,4 +1,4 @@
-#include "src/Include/min.h"
+#include "min.h"
 
 void Min::change(float num)
 {

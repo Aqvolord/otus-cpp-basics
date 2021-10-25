@@ -1,6 +1,6 @@
 #pragma once
 
-#include "src/Include/statistics.h"
+#include "statistics.h"
 
 class Mean : public IStatistics
 {

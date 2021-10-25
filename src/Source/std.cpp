@@ -1,4 +1,4 @@
-#include "src/Include/std.h"
+#include "std.h"
 
 void Std::change(float num)
 {

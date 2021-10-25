@@ -1,6 +1,6 @@
-#include "src/Include/Min.h"
-#include "src/Include/Max.h"
-#include "src/Include/Std.h"
+#include "min.h"
+#include "max.h"
+#include "std.h"
 
 #include <iostream>
 
