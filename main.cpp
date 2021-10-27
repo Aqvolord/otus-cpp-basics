@@ -1,14 +1,9 @@
-#include "serialContainer.cpp"
+#include "serialContainer.h"
 #include "listContainer.cpp"
 
 int main()
 {
-	serialContainer conteiner(0, 10);
-	conteiner.SizeContainer();
-	conteiner.DeleteElements();
-	conteiner.AddingElements();
-
-
-
+	MyContainter <int> t(1);
+	t.size();
 	return 0;
 }
